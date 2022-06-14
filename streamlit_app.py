@@ -8,8 +8,6 @@ streamlit.text('🥙 Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥬 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑 Avacado Toast')
-streamlit.text('🍔🍔🍔 Big Fat loaded with Bacon Cheese Heart Attack Burger!!!!!🍔🍔🍔')
-
 
 streamlit.header('🍌 🍓 Build Your Own Fruit Smoothie 🥝 🍇')
 import pandas
@@ -22,3 +20,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #display the table on the page
 streamlit.dataframe(fruits_to_show)
+
+# New section to display fruityvice api response
+streamlit.header('Fruityvice fruit Advice!')
+import requests
+fruityvice_response = requets.get("https://fruityvice.com.api/fruit/watermelon")
+streamlit.text(fruityvice_response.json())
